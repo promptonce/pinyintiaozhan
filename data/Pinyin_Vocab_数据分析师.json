@@ -1,0 +1,20 @@
+[
+  { "hanzi": "数据清洗", "pinyin": "shujuqingxi", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "缺失值", "pinyin": "queshizhi", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "可视化", "pinyin": "keshihua", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "趋势分析", "pinyin": "qushifenxi", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "相关性", "pinyin": "xianguanxing", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "回归模型", "pinyin": "huiguimoxing", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "聚类分析", "pinyin": "juleifenxi", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "异常检测", "pinyin": "yichangjiance", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "指标体系", "pinyin": "zhibiaotixi", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "用户画像", "pinyin": "yonghuhuaxiang", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "数据仓库", "pinyin": "shujucangku", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "数据可用性", "pinyin": "shujukeyongxing", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "数据一致性", "pinyin": "shujuyizhixing", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "仪表盘", "pinyin": "yibiaopan", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "数据透视表", "pinyin": "shujutoushibiao", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "统计图表", "pinyin": "tongjitubiao", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "数据驱动", "pinyin": "shujuqudong", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "洞察能力", "pinyin": "dongchanengli", "isMastered": false, "consecutiveCorrect": 0, "history": [] }
+]

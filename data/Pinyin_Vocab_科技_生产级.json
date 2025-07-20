@@ -1,0 +1,21 @@
+[
+  { "hanzi": "人工智能", "pinyin": "rengongzhineng", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "大数据", "pinyin": "dashuju", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "深度学习", "pinyin": "shenduxuexi", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "机器视觉", "pinyin": "jiqishijue", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "互联网", "pinyin": "hulianwang", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "编程语言", "pinyin": "bianchengyuyan", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "算法模型", "pinyin": "suanfamoxing", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "知识图谱", "pinyin": "zhishitupu", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "语音识别", "pinyin": "yuyinshibie", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "数据挖掘", "pinyin": "shujuwajue", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "并行计算", "pinyin": "bingxingjisuan", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "图神经网络", "pinyin": "tushenjingwangluo", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "开源社区", "pinyin": "kaiyuanshequ", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "数据库管理", "pinyin": "shujukuguanli", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "区块链", "pinyin": "qukuailian", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "虚拟现实", "pinyin": "xunixianshi", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "增强现实", "pinyin": "zengqiangxianshi", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "自动驾驶", "pinyin": "zidongjiashi", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "智能硬件", "pinyin": "zhinengyingjian", "isMastered": false, "consecutiveCorrect": 0, "history": [] }
+]

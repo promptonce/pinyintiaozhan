@@ -1,0 +1,16 @@
+[
+  { "hanzi": "代码审查", "pinyin": "daimashencha", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "调试工具", "pinyin": "tiaoshigongju", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "算法优化", "pinyin": "suanfayouhua", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "系统架构", "pinyin": "xitongjiagou", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "接口文档", "pinyin": "jiekouwendang", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "版本控制", "pinyin": "banbenkongzhi", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "持续集成", "pinyin": "chixujicheng", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "部署脚本", "pinyin": "bushujiaoben", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "编译器", "pinyin": "bianyiqi", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "数据库连接", "pinyin": "shujukulianjie", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "性能测试", "pinyin": "xingnengceshi", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "异常处理", "pinyin": "yichangchuli", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "代码重构", "pinyin": "daimachonggou", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "单元测试", "pinyin": "danyuanceshi", "isMastered": false, "consecutiveCorrect": 0, "history": [] }
+]

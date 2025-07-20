@@ -1,0 +1,22 @@
+[
+  { "hanzi": "用户体验", "pinyin": "yonghutiyan", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "界面设计", "pinyin": "jiemiansheji", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "交互逻辑", "pinyin": "jiaohuluoji", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "可用性测试", "pinyin": "keyongxingceshi", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "线框图", "pinyin": "xiankuangtu", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "视觉层级", "pinyin": "shijuecengji", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "设计规范", "pinyin": "shejiguifan", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "响应式布局", "pinyin": "xiangyingshibuju", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "高保真原型", "pinyin": "gaobaozhenyuanxing", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "低保真草图", "pinyin": "dibaozhencaotu", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "设计系统", "pinyin": "shejixitong", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "动效设计", "pinyin": "dongxiaosheji", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "色彩搭配", "pinyin": "secaipeidai", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "组件复用", "pinyin": "zujianfuyong", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "字体排印", "pinyin": "zitifayin", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "分辨率适配", "pinyin": "fenbianlushipei", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "设计走查", "pinyin": "shejizoucha", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "Figma协作", "pinyin": "figmaxiezuo", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "竞品分析", "pinyin": "jingpinfenxi", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "用户访谈", "pinyin": "yonghufangtan", "isMastered": false, "consecutiveCorrect": 0, "history": [] }
+]

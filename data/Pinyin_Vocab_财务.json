@@ -1,0 +1,22 @@
+[
+  { "hanzi": "会计科目", "pinyin": "kuaijikemu", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "财务报表", "pinyin": "caiwubaobiao", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "利润总额", "pinyin": "lirunzonge", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "现金流量", "pinyin": "xianjinliuliang", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "成本控制", "pinyin": "chengbenkongzhi", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "预算执行", "pinyin": "yusanzhixing", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "固定资产", "pinyin": "gudingzichan", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "应收账款", "pinyin": "yingshouzhangkuan", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "应付账款", "pinyin": "yingfuzhangkuan", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "资产负债表", "pinyin": "zichanfuzhaibiao", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "会计准则", "pinyin": "kuaijizhunze", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "审计报告", "pinyin": "shenjibaogao", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "财务合规", "pinyin": "caiwuhegui", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "增值税", "pinyin": "zengzhishui", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "纳税申报", "pinyin": "nashuishenbao", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "税务筹划", "pinyin": "shuiwuchouhua", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "原始凭证", "pinyin": "yuanshipingzheng", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "财务软件", "pinyin": "caiwuruanjian", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "财务分析", "pinyin": "caiwufenxi", "isMastered": false, "consecutiveCorrect": 0, "history": [] },
+  { "hanzi": "资产评估", "pinyin": "zichanpinggu", "isMastered": false, "consecutiveCorrect": 0, "history": [] }
+]
