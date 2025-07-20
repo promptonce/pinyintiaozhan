@@ -37,8 +37,12 @@ export function useVocabulary() {
         const data = JSON.parse(e.target.result)
         
         if (Array.isArray(data) && data.every(item => item.hanzi && item.pinyin)) {
-          store.importVocabulary(data)
-          alert(`词库导入成功！共 ${data.length} 词。`)
+          const addedCount = store.importVocabulary(data)
+          if (addedCount > 0) {
+            alert(`词库导入成功！新增 ${addedCount} 词，共处理 ${data.length} 词。`)
+          } else {
+            alert(`词库导入完成，未添加新词汇。所有 ${data.length} 词已存在。`)
+          }
         } else {
           throw new Error('JSON 格式不规范。')
         }
@@ -49,6 +53,14 @@ export function useVocabulary() {
     
     reader.onerror = () => alert('读取文件错误。')
     reader.readAsText(file)
+  }
+
+  function deleteWord(wordId) {
+    store.deleteWord(wordId)
+  }
+
+  function updateWord(wordId, updates) {
+    store.updateWord(wordId, updates)
   }
 
   function exportToFile() {
@@ -76,7 +88,10 @@ export function useVocabulary() {
   return {
     newHanzi,
     newPinyin,
+    vocabulary: store.vocabulary,
     addWord,
+    deleteWord,
+    updateWord,
     importFromFile,
     exportToFile
   }

@@ -57,8 +57,23 @@ export const useVocabularyStore = defineStore('vocabulary', () => {
   }
 
   function importVocabulary(data) {
-    vocabulary.value = data.map(normalizeWord)
-    preparePracticeQueue()
+    const newWords = data.map(normalizeWord);
+    let addedCount = 0;
+    
+    // 合并新词汇，避免重复
+    newWords.forEach(newWord => {
+      const exists = vocabulary.value.some(existing => 
+        existing.hanzi === newWord.hanzi && existing.pinyin === newWord.pinyin
+      );
+      
+      if (!exists) {
+        vocabulary.value.push(newWord);
+        addedCount++;
+      }
+    });
+    
+    preparePracticeQueue();
+    return addedCount;
   }
 
   function submitCorrectAnswer(wordId, timeTaken) {
@@ -101,6 +116,35 @@ export const useVocabularyStore = defineStore('vocabulary', () => {
     }
   }
 
+  function deleteWord(wordId) {
+    // 从词汇库中删除
+    const vocabIndex = vocabulary.value.findIndex(w => w.id === wordId)
+    if (vocabIndex !== -1) {
+      vocabulary.value.splice(vocabIndex, 1)
+    }
+
+    // 从练习队列中删除
+    const queueIndex = practiceQueue.value.findIndex(w => w.id === wordId)
+    if (queueIndex !== -1) {
+      practiceQueue.value.splice(queueIndex, 1)
+      // 调整当前索引
+      if (currentWordIndex.value >= practiceQueue.value.length && practiceQueue.value.length > 0) {
+        currentWordIndex.value = 0
+      }
+    }
+  }
+
+  function updateWord(wordId, updates) {
+    const word = vocabulary.value.find(w => w.id === wordId)
+    if (word) {
+      Object.assign(word, updates)
+      // 如果修改了是否掌握状态，重新准备练习队列
+      if ('isMastered' in updates) {
+        preparePracticeQueue()
+      }
+    }
+  }
+
   // 初始化默认词库
   function initializeDefaultVocabulary() {
     const defaultVocab = [
@@ -129,6 +173,8 @@ export const useVocabularyStore = defineStore('vocabulary', () => {
     importVocabulary,
     submitCorrectAnswer,
     submitWrongAnswer,
+    deleteWord,
+    updateWord,
     initializeDefaultVocabulary
   }
 })
