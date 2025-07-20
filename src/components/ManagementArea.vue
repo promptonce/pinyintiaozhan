@@ -11,7 +11,7 @@
       <input
         v-model="newPinyin"
         type="text"
-        placeholder="连续拼音 (例如: zhichi)"
+        placeholder="可以留空，会自动生成"
       />
       <button
         class="btn btn-success add-word-btn"
@@ -105,6 +105,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useVocabulary } from '../composables/useVocabulary'
+import pinyin from 'pinyin'
 
 const {
   newHanzi,
@@ -156,6 +157,20 @@ const confirmDelete = (id) => {
 const fileInput = ref(null)
 
 const addNewWord = () => {
+  if (!newHanzi.value) {
+    alert('请输入汉字词语！')
+    return
+  }
+
+  // 转换汉字为拼音
+  const pinyinArray = pinyin(newHanzi.value, {
+    style: pinyin.STYLE_NORMAL, // 不带声调
+    heteronym: false // 不考虑多音字
+  })
+  const pinyinStr = pinyinArray.flat().join('')
+
+  newPinyin.value = pinyinStr.toLowerCase()
+
   if (addWord()) {
     // 清空输入框
     newHanzi.value = ''

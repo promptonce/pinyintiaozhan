@@ -46,6 +46,8 @@
 import { ref, computed, watch, onMounted } from 'vue'
 import { usePractice } from '../composables/usePractice'
 import { useShuangpinConverter } from '../composables/useShuangpinConverter'
+import { useVocabularyStore } from '../stores/vocabularyStore'
+import { storeToRefs } from 'pinia'
 import ProgressIndicator from './ProgressIndicator.vue'
 
 const {
@@ -59,7 +61,9 @@ const {
   handleInput
 } = usePractice()
 
-const { shuangpinSchemas, selectedScheme } = useShuangpinConverter()
+const store = useVocabularyStore()
+const { shuangpinSchemas } = useShuangpinConverter()
+const { selectedScheme } = storeToRefs(store)
 
 onMounted(() => {
   // 自动聚焦输入框

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "pinia": "^3.0.3",
+    "pinyin": "^4.0.0",
     "vue": "^3.5.17"
   },
   "devDependencies": {

@@ -3,26 +3,17 @@ import { ref } from 'vue'
 export function useShuangpinConverter() {
   const selectedScheme = ref('quanpin')
   
-  const shuangpinSchemas = {
-    "mspy": { 
-      "name": "微软双拼", 
-      "initials": {"ch": "i", "sh": "u", "zh": "v"}, 
-      "finals": { 
-        'a': 'a', 'o': 'o', 'e': 'e', 'ai': 'l', 'ei': 'z', 'ao': 'k', 'ou': 'b', 
-        'an': 'j', 'en': 'f', 'er': 'r', 'ang': 'h', 'eng': 'g', 'ong': 's', 
-        'i': 'i', 'ia': 'w', 'iao': 'c', 'ie': 'x', 'iu': 'q', 'ian': 'm', 
-        'in': 'n', 'iang': 'd', 'ing': ';', 'u': 'u', 'ua': 'w', 'uo': 'o', 
-        'uai': 'y', 'ui': 'v', 'uan': 'r', 'un': 'p', 'uang': 'd', 'v': 'y', 've': 't' 
-      }, 
-      "zero_initial_rule": {"type": "fixed", "key": "o"} 
-    },
-    // ... 其他双拼方案
+  const shuangpinSchemas = {}
+  // 动态导入所有双拼方案
+  const modules = import.meta.glob('../scheme/*.js', { eager: true })
+  for (const path in modules) {
+    const scheme = modules[path].default
+    shuangpinSchemas[scheme.id] = scheme
   }
-
   const INITIALS = ['b', 'p', 'm', 'f', 'd', 't', 'n', 'l', 'g', 'k', 'h', 'j', 'q', 'x', 'zh', 'ch', 'sh', 'r', 'z', 'c', 's', 'y', 'w']
 
-  function splitPinyin(pinyinStr) {
-    // 拼音拆分逻辑 (从原代码移植)
+  function splitPinyin(pinyinStr, finals) {
+    // 拼音拆分逻辑 (更新为使用传入的finals参数)
     const syllables = []
     let current = 0
     
@@ -33,7 +24,7 @@ export function useShuangpinConverter() {
         const initial = INITIALS.find(i => potentialSyllable.startsWith(i))
         const finalPart = initial ? potentialSyllable.substring(initial.length) : potentialSyllable
         
-        if (Object.values(shuangpinSchemas.mspy.finals).includes(finalPart) || Object.keys(shuangpinSchemas.mspy.finals).includes(finalPart)) {
+        if (Object.values(finals).includes(finalPart) || Object.keys(finals).includes(finalPart)) {
           syllables.push(potentialSyllable)
           current += len
           found = true
@@ -59,21 +50,17 @@ export function useShuangpinConverter() {
     let sp_final = ''
 
     if (initial) {
-      sp_initial = scheme.initials[initial] || initial
+      sp_initial = scheme.detail.sheng[initial] || initial
     } else {
-      const rule = scheme.zero_initial_rule
-      if (rule.type === 'fixed') {
-        sp_initial = rule.key
-      } else if (rule.type === 'first_letter') {
-        sp_initial = final[0]
-      } else if (rule.type === 'hybrid') {
-        if (rule.retained_finals.includes(final)) return final
-        if (final.length === 1 && "aoe".includes(final)) return final + final
-        sp_initial = final[0]
+      // 使用scheme.detail.other处理零声母
+      const zeroInitialEntry = scheme.detail.other[final]
+      if (zeroInitialEntry) {
+        return Array.isArray(zeroInitialEntry) ? zeroInitialEntry[0] : zeroInitialEntry
       }
+      sp_initial = final[0]
     }
 
-    sp_final = scheme.finals[final]
+    sp_final = scheme.detail.yun[final]
     if (typeof sp_final === 'undefined') return `[${syllable}]`
 
     return sp_initial + sp_final
@@ -84,7 +71,7 @@ export function useShuangpinConverter() {
     const scheme = shuangpinSchemas[schemeKey]
     if (!scheme) return null
     
-    const syllables = splitPinyin(quanpin)
+    const syllables = splitPinyin(quanpin, scheme.detail.yun)
     return syllables.map(s => convertSyllable(s, scheme)).join('')
   }
 

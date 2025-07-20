@@ -1,11 +1,12 @@
 import { ref, computed, watch } from 'vue'
 import { useVocabularyStore } from '../stores/vocabularyStore'
 import { useShuangpinConverter } from './useShuangpinConverter'
+import { storeToRefs } from 'pinia'
 
 export function usePractice() {
   const store = useVocabularyStore()
-  const { selectedScheme, toShuangpin } = useShuangpinConverter()
-  
+  const { toShuangpin } = useShuangpinConverter()
+  const { selectedScheme } = storeToRefs(store)
   const userInput = ref('')
   const showError = ref(false)
   const notificationMessage = ref('')
@@ -39,11 +40,17 @@ export function usePractice() {
     const correctPinyin = currentWord.value.pinyin
     let isCorrect = false
 
+    console.log('当前方案:', selectedScheme.value)
+    console.log('正确拼音:', correctPinyin)
+
     if (selectedScheme.value === 'quanpin') {
       isCorrect = (input === correctPinyin)
+      console.log('全拼检验:', input, correctPinyin, isCorrect)
     } else {
       const correctShuangpin = toShuangpin(correctPinyin, selectedScheme.value)
+      console.log('双拼转换:', correctPinyin, '→', correctShuangpin)
       isCorrect = (input === correctShuangpin)
+      console.log('双拼检验:', input, correctShuangpin, isCorrect)
     }
 
     if (isCorrect) {

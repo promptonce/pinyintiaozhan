@@ -6,6 +6,7 @@ export const useVocabularyStore = defineStore('vocabulary', () => {
   const vocabulary = ref([])
   const practiceQueue = ref([])
   const currentWordIndex = ref(0)
+  const selectedScheme = ref('quanpin')
 
   // 配置常量
   const MASTERY_CONFIG = {
@@ -195,6 +196,7 @@ export const useVocabularyStore = defineStore('vocabulary', () => {
     submitWrongAnswer,
     deleteWord,
     updateWord,
-    initializeDefaultVocabulary
+    initializeDefaultVocabulary,
+    selectedScheme
   }
 })
