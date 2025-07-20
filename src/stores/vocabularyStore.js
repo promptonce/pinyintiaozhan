@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 
 export const useVocabularyStore = defineStore('vocabulary', () => {
   // 状态
@@ -147,15 +147,38 @@ export const useVocabularyStore = defineStore('vocabulary', () => {
 
   // 初始化默认词库
   function initializeDefaultVocabulary() {
-    const defaultVocab = [
-      { "hanzi": "小鹤双拼", "pinyin": "xiaoheshuangpin" },
-    ]
-    
-    if (vocabulary.value.length === 0) {
-      vocabulary.value = defaultVocab.map(normalizeWord)
-      preparePracticeQueue()
+  // 尝试从localStorage加载数据
+  const savedData = localStorage.getItem('vocabularyData');
+  if (savedData) {
+    try {
+      const parsedData = JSON.parse(savedData);
+      vocabulary.value = parsedData.map(normalizeWord);
+      preparePracticeQueue();
+      return;
+    } catch (e) {
+      console.error('Failed to parse saved vocabulary data', e);
     }
   }
+
+  // 如果没有保存的数据或解析失败，使用默认数据
+  const defaultVocab = [
+    { "hanzi": "小鹤双拼", "pinyin": "xiaoheshuangpin" },
+  ]
+  
+  if (vocabulary.value.length === 0) {
+    vocabulary.value = defaultVocab.map(normalizeWord)
+    preparePracticeQueue()
+  }
+}
+
+  // 监听词汇变化并保存到localStorage
+  watch(
+    () => vocabulary.value,
+    (newVocabulary) => {
+      localStorage.setItem('vocabularyData', JSON.stringify(newVocabulary));
+    },
+    { deep: true }
+  );
 
   return {
     // 状态
