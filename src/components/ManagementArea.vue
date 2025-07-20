@@ -29,7 +29,7 @@
         <tbody>
           <tr v-for="word in vocabulary" :key="word.id">
             <td>{{ word.hanzi }}</td>
-            <td>{{ word.pinyin }}</td>
+            <td class="pinyin-cell" :data-pinyin="word.pinyin"></td>
             <td>
               <span :class="word.isMastered ? 'mastered' : 'practicing'">
                 {{ word.isMastered ? '已掌握' : '练习中' }}
@@ -350,5 +350,30 @@ h2 {
 .btn:hover {
   opacity: 0.9;
   transform: translateY(-1px);
+}
+.pinyin-cell {
+  position: relative;
+  display: inline-block;
+  min-width: 40px;
+}
+
+.pinyin-cell::before {
+  content: '***';
+  visibility: visible;
+}
+
+.pinyin-cell::after {
+  content: attr(data-pinyin);
+  position: absolute;
+  left: 0;
+  visibility: hidden;
+}
+
+::v-deep tr:hover .pinyin-cell::before {
+  visibility: hidden;
+}
+
+::v-deep tr:hover .pinyin-cell::after {
+  visibility: visible;
 }
 </style>
