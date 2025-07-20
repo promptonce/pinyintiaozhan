@@ -148,10 +148,7 @@ export const useVocabularyStore = defineStore('vocabulary', () => {
   // 初始化默认词库
   function initializeDefaultVocabulary() {
     const defaultVocab = [
-      { "hanzi": "强大", "pinyin": "qiangda" },
-      { "hanzi": "方案", "pinyin": "fangan" },
       { "hanzi": "小鹤双拼", "pinyin": "xiaoheshuangpin" },
-      { "hanzi": "兼容", "pinyin": "jianrong" }
     ]
     
     if (vocabulary.value.length === 0) {

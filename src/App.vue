@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <div class="container">
-      <h1>专业拼音练习工具 v3.0</h1>
+      <h1>专业拼音练习工具 20250720</h1>
       
       <PracticeArea />
       <ManagementArea />
