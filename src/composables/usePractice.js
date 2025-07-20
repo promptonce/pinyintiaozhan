@@ -62,9 +62,57 @@ export function usePractice() {
     } else {
       showError.value = true
       store.submitWrongAnswer(currentWord.value.id)
+      // 播放正确发音
+      playPronunciation(currentWord.value.hanzi)
       setTimeout(() => {
         showError.value = false
       }, 400)
+    }
+  }
+
+  // 语音播放函数
+  function playPronunciation(text) {
+    const utterance = new SpeechSynthesisUtterance(text)
+    utterance.lang = 'zh-CN'
+    
+    // 获取所有可用语音并筛选更自然的中文语音
+    const voices = window.speechSynthesis.getVoices()
+    // 扩展语音选择范围，适配不同系统的高质量中文语音
+    const chineseVoice = voices.find(voice => 
+      // Windows系统高质量语音
+      voice.name.includes('Microsoft Yaoyao') || 
+      voice.name.includes('Microsoft Huihui') ||
+      voice.name.includes('Microsoft Xiaoxiao') ||
+      // macOS系统高质量语音
+      voice.name.includes('Ting-Ting') ||
+      voice.name.includes('Mei-Jia') ||
+      // 通用中文语音
+      voice.name.includes('Google 普通话') ||
+      voice.name.includes('Chinese (Simplified)') ||
+      (voice.lang === 'zh-CN' && voice.voiceURI.includes('natural'))
+    )
+    
+    if (chineseVoice) {
+      utterance.voice = chineseVoice
+    } else if (voices.length > 0) {
+      // 如果没有找到理想语音，尝试使用第一个中文语音
+      const fallbackVoice = voices.find(voice => voice.lang.includes('zh'))
+      if (fallbackVoice) utterance.voice = fallbackVoice
+    }
+    
+    // 进一步优化中文语音参数
+    utterance.pitch = 1.0
+    utterance.rate = 0.95
+    utterance.volume = 1.0
+    
+    // 确保语音加载完成后再播放
+    if (voices.length === 0) {
+      window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.speak(utterance)
+        window.speechSynthesis.onvoiceschanged = null
+      }
+    } else {
+      window.speechSynthesis.speak(utterance)
     }
   }
 
