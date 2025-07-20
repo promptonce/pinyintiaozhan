@@ -8,11 +8,6 @@
         type="text"
         placeholder="中文词语 (例如: 支持)"
       />
-      <input
-        v-model="newPinyin"
-        type="text"
-        placeholder="可以留空，会自动生成"
-      />
       <button
         class="btn btn-success add-word-btn"
         @click="addNewWord"
